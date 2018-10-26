@@ -1,0 +1,17 @@
+<html>
+  <body>
+    <div>
+    <form method="POST" action="/add">
+      <input type="text" name="title">
+      <input type="submit" value="Add">
+    </form>
+    <h1>NoteS</h1>
+      {% for note in notes %}
+      <p>{{note.title}}</p>
+      <p>{{note.content}}</p>
+      <p>{{note.created_date}}</p>
+      <p>{{note.modified_date}}</p>
+      {% endfor %}
+  </div>
+  </body>
+</html>
