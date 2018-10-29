@@ -55,7 +55,7 @@ getting deleted notes
 curl -H "Content-type: application/json" -X GET  http://localhost:5000/deleted
 ```
 
-Openning http://localhost:5000 in a browser prints all database entries 
+Opening http://localhost:5000 in a browser prints all database entries 
 
 ## Tests
 
