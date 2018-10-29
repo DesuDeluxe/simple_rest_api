@@ -22,22 +22,22 @@ python -c "from flaskex import db; db.create_all()"
 
 adding note
 ```
-curl -H "Content-type: application/json" -X POST -d '{"title": "<NOTE TITLE>", "content": "<NOTE>"}' http://localhost:5000/notes
+curl -H "Content-type: application/json" -X POST -d '{"title": "< NOTE TITLE >", "content": "< NOTE >"}' http://localhost:5000/notes
 ```
 
 modifying note
 ```
-curl -H "Content-type: application/json" -X PUT -d '{"content": "<NOTE EDIT>"}' http://localhost:5000/note/<NOTE ID>
+curl -H "Content-type: application/json" -X PUT -d '{"content": "< NOTE EDIT >"}' http://localhost:5000/note/< NOTE ID >
 ```
 
 deleting note
 ```
-curl -H "Content-type: application/json" -X DELETE  http://localhost:5000/note/<NOTE ID>
+curl -H "Content-type: application/json" -X DELETE  http://localhost:5000/note/< NOTE ID >
 ```
 
 getting note
 ```
-curl -H "Content-type: application/json" -X GET  http://localhost:5000/note/<NOTE ID>
+curl -H "Content-type: application/json" -X GET  http://localhost:5000/note/< NOTE ID >
 ```
 
 getting all notes
