@@ -5,13 +5,38 @@
       <input type="text" name="title">
       <input type="submit" value="Add">
     </form>
-    <h1>NoteS</h1>
-      {% for note in notes %}
+    <div>
+    <h1>Notes</h1>
+      {% for note in Notes %}
       <p>{{note.title}}</p>
       <p>{{note.content}}</p>
       <p>{{note.created_date}}</p>
       <p>{{note.modified_date}}</p>
       {% endfor %}
-  </div>
+    </div>
+    <div>
+    <h1>Notes history</h1>
+      {% for note in NotesHistory %}
+      <p>{{note.id}}</p>
+      <p>{{note.note_id}}</p>
+      <p>{{note.title}}</p>
+      <p>{{note.content}}</p>
+      <p>{{note.created_date}}</p>
+      <p>{{note.modified_date}}</p>
+      {% endfor %}
+    </div>
+    <div>
+    <h1>Notes deleted</h1>
+      {% for note in NotesDeleted %}
+      <p>{{note.id}}</p>
+      <p>{{note.note_id}}</p>
+      <p>{{note.title}}</p>
+      <p>{{note.content}}</p>
+      <p>{{note.created_date}}</p>
+      <p>{{note.modified_date}}</p>
+      <p>{{note.deletion_date}}</p>
+      {% endfor %}
+    </div>
+    </div>
   </body>
 </html>
