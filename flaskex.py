@@ -25,7 +25,7 @@ def copy_data(note, to):
 def find_and_abort_if_doesnt_exist(number):
     note = DB_Notes.query.filter_by(id=number).first()
     if note is None:
-        abort(404, message="Todo {} doesn't exist".format(number))
+        abort(404, message="Note number {} doesn't exist".format(number))
     else:
         return note
 
@@ -126,16 +126,16 @@ class NotesHistory(Resource):
     def get(self, number):
         note = DB_NotesHistory.query.filter_by(note_id=number).order_by(DB_NotesHistory.modified_date.desc()).all()
         if note is None:
-            abort(404, message="Todo {} doesn't exist".format(number))
+            abort(404, message="History of note number {} doesn't exist".format(number))
         return note, 200
         #return Response([note.title, "\n",note.content, "\n", note.created_date.strftime('%m/%d/%Y'), "\n", note.modified_date.strftime('%m/%d/%Y')])
 
 class NotesDeleted(Resource):
     @marshal_with(noteD_fields)
-    def get(self, number):
-        note = NotesDeleted.query.filter_by(note_id=number).order_by(NotesDeleted.deletion_date.desc()).all()
+    def get(self):
+        note = DB_NotesDeleted.query.all()
         if note is None:
-            abort(404, message="Todo {} doesn't exist".format(number))
+            abort(404, message="No deleted notes")
         return note, 200
 
 ##setup the Api resource routing
